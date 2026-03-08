@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background-color: #ffffff; /* White header */
-  border-bottom: 1px solid #e0e0e0;
+  background-color: var(--background);
+  border-bottom: 1px solid color-mix(in srgb, var(--background) 80%, var(--foreground) 20%);
 }
 
 .authorInfo {
@@ -16,24 +16,24 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #cccccc; /* Gray for avatar */
+  background-color: color-mix(in srgb, var(--background) 60%, var(--foreground) 40%);
   margin-right: 8px;
 }
 
 .username {
   font-weight: bold;
   margin-right: 8px;
-  color: #333333;
+  color: var(--foreground);
 }
 
 .uploadDate {
   font-size: 0.8em;
-  color: #666666;
+  color: color-mix(in srgb, var(--background) 50%, var(--foreground) 50%);
 }
 
 .followButton {
   background-color: #007bff; /* A simple blue for primary action */
-  color: white;
+  color: color-mix(in srgb, var(--foreground) 0%, var(--background) 100%);
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
