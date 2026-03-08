@@ -1,40 +1,19 @@
+import { Suspense } from "react";
+import CommentInput from "../components/CommentInput";
+import CommentList from "../components/CommentList";
 import HeaderSection from "../components/HeaderSection";
 import ReactionButtonsSection from "../components/ReactionButtonsSection";
 import VideoPlayerSection from "../components/VideoPlayerSection";
-import CommentInput from "../components/CommentInput"; // New import
-import CommentList from "../components/CommentList";   // New import
+import { Comment, fetchComments } from "../lib/comments"; // Import from new file
 import styles from "./page.module.css";
 
-// Simulate an asynchronous data fetch
-function fetchComments() {
-  return new Promise<{ id: string; username: string; text: string; timestamp: string; }[]>((resolve) => {
-    setTimeout(() => {
-      resolve([
-        {
-          id: "1",
-          username: "UserA",
-          text: "Great video!",
-          timestamp: "5 mins ago",
-        },
-        {
-          id: "2",
-          username: "UserB",
-          text: "Love the content!",
-          timestamp: "10 mins ago",
-        },
-        {
-          id: "3",
-          username: "UserC",
-          text: "Awesome work!",
-          timestamp: "15 mins ago",
-        },
-      ]);
-    }, 2000); // Simulate 2 seconds delay
-  });
+// A simple loading component for Suspense fallback
+function CommentLoading() {
+  return <div className={styles.commentLoading}>Loading comments...</div>;
 }
 
 export default function Page() {
-  const commentsPromise = fetchComments();
+  const commentsPromise: Promise<Comment[]> = fetchComments();
 
   return (
     <div className={styles.container}>
@@ -45,7 +24,9 @@ export default function Page() {
         <ReactionButtonsSection />
         <section className={styles.commentsSection}>
           <CommentInput />
-          <CommentList commentsPromise={commentsPromise} />
+          <Suspense fallback={<CommentLoading />}>
+            <CommentList commentsPromise={commentsPromise} />
+          </Suspense>
         </section>
       </main>
     </div>
