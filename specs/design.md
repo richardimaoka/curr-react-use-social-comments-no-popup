@@ -1,7 +1,7 @@
 # Social Comments Demo App Design Document
 
 ## 1. Introduction
-This document outlines the design for a demo social application focused on image sharing, inspired by platforms like Lemon8. The primary purpose of this app is to demonstrate social commenting functionality within a single-page context. It is not intended to be a full-featured social networking application but rather a focused showcase of key social interaction elements.
+This document outlines the design for a demo social application focused on video sharing, inspired by platforms like Lemon8. The primary purpose of this app is to demonstrate social commenting functionality within a single-page context. It is not intended to be a full-featured social networking application but rather a focused showcase of key social interaction elements.
 
 ## 2. Core Principles
 - **Simplicity:** The app is designed to be straightforward, focusing on essential social features without unnecessary complexity.
@@ -32,15 +32,15 @@ The application will consist of a single page with a clear division into a heade
 The header section provides essential information about the post's author and timing.
 
 - **Author Avatar:** A circular image display for the author's profile picture.
-- **Author Username:** The username of the person who uploaded the image, prominently displayed.
-- **Image Upload Date:** A clear indication of when the image was posted (e.g., "2 days ago", "March 7, 2026").
+- **Author Username:** The username of the person who uploaded the video, prominently displayed.
+- **Video Upload Date:** A clear indication of when the video was posted (e.g., "2 days ago", "March 7, 2026").
 - **Follow Button (Optional but Recommended for realism):** A simple button to simulate following the author.
 
-### 4.2. Content Section 1: Image Display
-This section is dedicated to showcasing the primary content – the shared image.
+### 4.2. Content Section 1: Video Player
+This section is dedicated to showcasing the primary content – the shared video.
 
-- **Main Image:** The uploaded image will be displayed prominently, taking up a significant portion of the screen real estate to emphasize its visual nature.
-- **Image Aspect Ratio:** The image should ideally maintain its original aspect ratio but fit within the display boundaries. A common practice is to fit it horizontally and crop vertically if needed, or vice-versa, depending on desired aesthetics.
+- **Main Video Player:** The uploaded video will be displayed prominently, taking up a significant portion of the screen real estate to emphasize its visual nature.
+- **Video Aspect Ratio:** The video should ideally maintain its original aspect ratio but fit within the display boundaries. A common practice is to fit it horizontally and crop vertically if needed, or vice-versa, depending on desired aesthetics.
 
 ### 4.3. Content Section 2: Reaction Buttons
 Below the image, a set of interactive buttons will allow users to express reactions.
