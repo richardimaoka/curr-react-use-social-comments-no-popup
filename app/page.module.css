@@ -4,6 +4,9 @@
   min-height: 100vh;
   background-color: #f0f0f0; /* Light gray background for the whole page */
   font-family: sans-serif;
+  max-width: 480px; /* Set max width */
+  margin: 0 auto; /* Center the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visual separation */
 }
 
 .header {
