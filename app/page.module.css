@@ -12,3 +12,10 @@
   margin: 0 auto; /* Center the container */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visual separation */
 }
+
+.commentsSection {
+  background-color: var(--background);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--background) 80%, var(--foreground) 20%);
+}

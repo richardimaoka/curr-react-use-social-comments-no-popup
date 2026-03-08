@@ -1,0 +1,47 @@
+.commentList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.commentItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 1px solid color-mix(in srgb, var(--background) 90%, var(--foreground) 10%);
+}
+.commentItem:last-child {
+  border-bottom: none;
+}
+
+.commenterAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--background) 60%, var(--foreground) 40%);
+  flex-shrink: 0;
+}
+
+.commenterUsername {
+  font-weight: bold;
+  color: var(--foreground);
+}
+
+.commentText {
+  flex-grow: 1;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.commentTimestamp {
+  font-size: 0.75em;
+  color: color-mix(in srgb, var(--background) 50%, var(--foreground) 50%);
+  flex-shrink: 0;
+}
+
+.commentLoading {
+  padding: 16px;
+  text-align: center;
+  color: color-mix(in srgb, var(--background) 50%, var(--foreground) 50%);
+}

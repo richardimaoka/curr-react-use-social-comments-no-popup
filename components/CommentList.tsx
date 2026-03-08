@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './CommentSection.module.css';
+import React, { Suspense } from 'react';
+import styles from './CommentList.module.css';
 
 interface Comment {
   id: string;
@@ -8,17 +8,19 @@ interface Comment {
   timestamp: string;
 }
 
-interface CommentSectionProps {
-  comments: Comment[];
+interface CommentListProps {
+  commentsPromise: Promise<Comment[]>;
 }
 
-const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => {
+function CommentLoading() {
+  return <div className={styles.commentLoading}>Loading comments...</div>;
+}
+
+const CommentList: React.FC<CommentListProps> = ({ commentsPromise }) => {
+  const comments = React.use(commentsPromise);
+
   return (
-    <section className={styles.commentsSection}>
-      <div className={styles.commentInput}>
-        <input type="text" placeholder="Add a comment..." className={styles.commentInputField} />
-        <button className={styles.postCommentButton}>Post</button>
-      </div>
+    <Suspense fallback={<CommentLoading />}>
       <div className={styles.commentList}>
         {comments.map((comment) => (
           <div key={comment.id} className={styles.commentItem}>
@@ -29,8 +31,8 @@ const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => {
           </div>
         ))}
       </div>
-    </section>
+    </Suspense>
   );
 };
 
-export default CommentSection;
+export default CommentList;
