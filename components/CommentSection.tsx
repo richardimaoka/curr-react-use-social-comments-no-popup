@@ -1,7 +1,18 @@
 import React from 'react';
 import styles from './CommentSection.module.css';
 
-const CommentSection: React.FC = () => {
+interface Comment {
+  id: string;
+  username: string;
+  text: string;
+  timestamp: string;
+}
+
+interface CommentSectionProps {
+  comments: Comment[];
+}
+
+const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => {
   return (
     <section className={styles.commentsSection}>
       <div className={styles.commentInput}>
@@ -9,19 +20,14 @@ const CommentSection: React.FC = () => {
         <button className={styles.postCommentButton}>Post</button>
       </div>
       <div className={styles.commentList}>
-        {/* Placeholder for individual comments */}
-        <div className={styles.commentItem}>
-          <div className={styles.commenterAvatar}></div>
-          <span className={styles.commenterUsername}>Commenter 1</span>
-          <p className={styles.commentText}>This is a comment.</p>
-          <span className={styles.commentTimestamp}>1 hour ago</span>
-        </div>
-        <div className={styles.commentItem}>
-          <div className={styles.commenterAvatar}></div>
-          <span className={styles.commenterUsername}>Commenter 2</span>
-          <p className={styles.commentText}>Another comment here.</p>
-          <span className={styles.commentTimestamp}>30 minutes ago</span>
-        </div>
+        {comments.map((comment) => (
+          <div key={comment.id} className={styles.commentItem}>
+            <div className={styles.commenterAvatar}></div>
+            <span className={styles.commenterUsername}>{comment.username}</span>
+            <p className={styles.commentText}>{comment.text}</p>
+            <span className={styles.commentTimestamp}>{comment.timestamp}</span>
+          </div>
+        ))}
       </div>
     </section>
   );
