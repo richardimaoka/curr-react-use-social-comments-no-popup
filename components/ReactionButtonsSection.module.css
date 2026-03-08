@@ -1,0 +1,17 @@
+.reactionButtonsSection {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.reactionButton {
+  background-color: #f8f8f8;
+  border: 1px solid #dddddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #555555;
+}
