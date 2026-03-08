@@ -12,13 +12,16 @@ const CommentList: React.FC<CommentListProps> = ({ commentsPromise }) => {
   return (
     <div className={styles.commentList}>
       {comments.map((comment) => (
-        <div key={comment.id} className={styles.commentItem}>
-          <div className={styles.commenterAvatar}></div>
-          <span className={styles.commenterUsername}>{comment.username}</span>
-          <p className={styles.commentText}>{comment.text}</p>
-          <span className={styles.commentTimestamp}>{comment.timestamp}</span>
-        </div>
-      ))}
+                  <div key={comment.id} className={styles.commentItem}>
+                    <img src={comment.avatarSrc} alt={`${comment.username}'s avatar`} className={styles.commenterAvatar} />
+                    <div className={styles.commentContent}>
+                      <div className={styles.commentMeta}>
+                        <span className={styles.commenterUsername}>{comment.username}</span>
+                        <span className={styles.commentTimestamp}>{comment.timestamp}</span>
+                      </div>
+                      <p className={styles.commentText}>{comment.text}</p>
+                    </div>
+                  </div>      ))}
     </div>
   );
 };
