@@ -1,20 +1,13 @@
 .videoPlayerSection {
-  background-color: color-mix(in srgb, var(--background) 90%, var(--foreground) 10%);
-  border-radius: 8px;
-  padding: 16px;
+  background-color: color-mix(
+    in srgb,
+    var(--background) 90%,
+    var(--foreground) 10%
+  );
 }
 
-.videoPlaceholder {
+.videoPlayer {
   width: 100%;
-  height: 300px; /* Fixed height for wireframe video */
-  background-color: color-mix(in srgb, var(--background) 50%, var(--foreground) 50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: color-mix(in srgb, var(--foreground) 0%, var(--background) 100%);
-  font-size: 1.5em;
-  border-radius: 4px;
-}
-.videoPlaceholder::before {
-  content: "Video Placeholder";
+  height: auto; /* Allow video to maintain its aspect ratio */
+  display: block; /* Remove extra space below video */
 }
